@@ -12,10 +12,9 @@ class LoginActivity : AppCompatActivity() {
         setContentView(R.layout.activity_login)
 
         // 저장된 id, pw가 있다면 자동 로그인
-        if(Pref.sharedPref.getString("id", "") != null
-            && Pref.sharedPref.getString("pw", "") != null)
+        if(Pref.sharedPref.getBoolean("auto", false))
         {
-            toast("자동 로그인 성공")
+            toast("자동 로그인 되었습니다")
             val intent = Intent(this, HomeActivity::class.java)
             startActivity(intent)
         }
@@ -23,21 +22,28 @@ class LoginActivity : AppCompatActivity() {
         // 회원가입
         btn_signup.setOnClickListener{
             val intent = Intent(this, SignUpActivity::class.java)
-            startActivityForResult(intent, 0)
+            startActivityForResult(intent, RESULT_CODE)
         }
 
         // 로그인
         btn_login.setOnClickListener{
-            if (switch_auto.isChecked) {
-                // SharedPreferences에 저장
-                Pref.sharedEdit.putString("id", et_id.text.toString())
-                Pref.sharedEdit.putString("pw", et_pw.text.toString())
-                Pref.sharedEdit.apply()
-            }
+            // id, pw 존재 -> 로그인 성공
+            if(et_id.text.toString() == Pref.sharedPref.getString("id", "")
+                && et_pw.text.toString() ==  Pref.sharedPref.getString("pw", "")){
 
-            toast("로그인 성공 :)")
-            val intent = Intent(this, HomeActivity::class.java)
-            startActivity(intent)
+                // 자동 로그인 체크 시 그 여부를 SharedPreferences에 저장
+                if (switch_auto.isChecked) {
+                    Pref.sharedEdit.putBoolean("auto", true)
+                    Pref.sharedEdit.apply()
+                }
+
+                toast("로그인 성공 :)")
+                val intent = Intent(this, HomeActivity::class.java)
+                startActivity(intent)
+
+            } else {
+                toast("회원 정보를 다시 확인해주세요.")
+            }
         }
     }
 
@@ -46,12 +52,16 @@ class LoginActivity : AppCompatActivity() {
         super.onActivityResult(requestCode, resultCode, data)
         if(resultCode == Activity.RESULT_OK){
             when (requestCode){
-                0 -> {
+                RESULT_CODE -> {
                     et_id.setText(data!!.getStringExtra("id").toString())
                     et_pw.setText(data!!.getStringExtra("pw").toString())
                 }
             }
         }
+    }
+
+    companion object {
+        private const val RESULT_CODE = 0
     }
 }
 

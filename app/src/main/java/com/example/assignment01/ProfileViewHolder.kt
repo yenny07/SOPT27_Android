@@ -2,6 +2,7 @@ package com.example.assignment01
 
 import android.view.View
 import android.widget.TextView
+import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 
 class ProfileViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
@@ -11,5 +12,10 @@ class ProfileViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView){
     fun onBind(data : ProfileData){
         title.text = data.title
         subTitle.text = data.subTitle
+
+        itemView.setOnClickListener {
+            // intent shit
+            Toast.makeText(it.context, "HI", Toast.LENGTH_SHORT).show()
+        }
     }
 }

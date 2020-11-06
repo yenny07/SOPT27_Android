@@ -16,5 +16,4 @@ object Pref {
         sharedEdit = sharedPref.edit()
         sharedEdit.apply()
     }
-
 }

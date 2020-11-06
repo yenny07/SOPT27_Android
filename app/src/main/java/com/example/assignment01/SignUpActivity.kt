@@ -18,6 +18,11 @@ class SignUpActivity : AppCompatActivity() {
         if(et_name.text.isNullOrBlank() || et_id.text.isNullOrBlank() || et_pw.text.isNullOrBlank()) {
             toast("모든 정보를 기입해주세요.")
         } else{
+            // SharedPreferences에 id, pw 저장
+            Pref.sharedEdit.putString("id", et_id.text.toString())
+            Pref.sharedEdit.putString("pw", et_pw.text.toString())
+            Pref.sharedEdit.apply()
+
             // 로그인 액티비티에 set
             val intent = Intent(this, LoginActivity::class.java)
             intent.putExtra("id", et_id.text.toString())
