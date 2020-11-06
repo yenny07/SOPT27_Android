@@ -1,6 +1,10 @@
 # SOPT27_Android
 
 ### 📌 Assignment01 20201105
+<img src = "https://user-images.githubusercontent.com/50744222/98365459-ce56f580-2075-11eb-9c9f-352bbb0488fe.gif" 
+width = "30%"/>
+<img src = "https://user-images.githubusercontent.com/50744222/98365586-fba3a380-2075-11eb-9fb1-69b10ef2d53f.gif"
+width = "30%" />  
 ### 📑 MUST - SignUpActivity
 🔥 로그인 화면에서 회원가입을 누르면 이동 ***(setOnClickListener)***
 ```kotlin
@@ -37,7 +41,7 @@
 ```
   
   
-## 📑 OPTIONAL - 화면이동
+### 📑 OPTIONAL - 화면이동
 🔥 회원가입 후 이전 로그인 화면으로 돌아가기.  
 🔥 방금 가입한 아이디와 비밀번호가 미리 입력되어 있을 것.  
 **(startActivityForResult, setResult, onActivityResult)**  
@@ -77,7 +81,7 @@ override fun onActivityResult(requestCode: Int, resultCode: Int, data: Intent?) 
 ```
   
   
-## 📑 OPTIONAL - 자동 로그인  
+### 📑 OPTIONAL - 자동 로그인  
 🔥 로그인 시 HomeActivity로 이동 ***startActivity***  
 ```kotlin
 // 로그인
@@ -145,3 +149,7 @@ object Pref {
         ...
         }
 ```
+
+
+### 📌 Assignment02 20201106
+### 📑 MUST - RecyclerView on HomeActivity
