@@ -1,4 +1,4 @@
-package com.example.assignment01
+package com.example.assignment01.util
 
 import android.annotation.SuppressLint
 import android.content.Context
@@ -12,7 +12,8 @@ object Pref {
 
     @SuppressLint("CommitPrefEdits")
     fun init(context: Context){
-        sharedPref = context.getSharedPreferences(PREF_NAME, Context.MODE_PRIVATE)
+        sharedPref = context.getSharedPreferences(
+            PREF_NAME, Context.MODE_PRIVATE)
         sharedEdit = sharedPref.edit()
         sharedEdit.apply()
     }

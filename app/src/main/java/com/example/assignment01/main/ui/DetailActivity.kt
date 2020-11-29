@@ -1,7 +1,8 @@
-package com.example.assignment01
+package com.example.assignment01.main.ui
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.assignment01.R
 import kotlinx.android.synthetic.main.activity_detail.*
 
 class DetailActivity : AppCompatActivity() {

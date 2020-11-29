@@ -1,9 +1,12 @@
-package com.example.assignment01
+package com.example.assignment01.login.ui
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.assignment01.util.Pref
+import com.example.assignment01.R
+import com.example.assignment01.util.toast
 import kotlinx.android.synthetic.main.activity_signup.*
 
 @Suppress("SENSELESS_COMPARISON")

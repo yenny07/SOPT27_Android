@@ -1,4 +1,4 @@
-package com.example.assignment01
+package com.example.assignment01.main.model
 
 data class ProfileData(
     val title : String,

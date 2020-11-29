@@ -10,18 +10,18 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".seminar.VPActivity"
-            android:exported="true"/>
+        <activity android:name=".seminar.VPActivity" />
         <activity android:name=".seminar.FragExerActivity" />
-        <activity android:name=".DetailActivity" />
-        <activity android:name=".HomeActivity" />
-        <activity android:name=".LoginActivity">
+        <activity android:name=".main.ui.DetailActivity" />
+        <activity android:name=".main.ui.HomeActivity"
+            android:exported="true" />
+        <activity android:name=".login.ui.LoginActivity">
         <intent-filter>
             <action android:name="android.intent.action.MAIN" />
             <category android:name="android.intent.category.LAUNCHER" />
         </intent-filter>
         </activity>
-        <activity android:name=".SignUpActivity" />
+        <activity android:name=".login.ui.SignUpActivity" />
     </application>
 
 </manifest>

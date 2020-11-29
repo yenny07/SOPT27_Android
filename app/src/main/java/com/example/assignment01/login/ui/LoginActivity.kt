@@ -1,9 +1,13 @@
-package com.example.assignment01
+package com.example.assignment01.login.ui
 
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.assignment01.*
+import com.example.assignment01.main.ui.HomeActivity
+import com.example.assignment01.util.Pref
+import com.example.assignment01.util.toast
 import kotlinx.android.synthetic.main.activity_login.*
 
 class LoginActivity : AppCompatActivity() {
@@ -22,7 +26,9 @@ class LoginActivity : AppCompatActivity() {
         // 회원가입
         btn_signup.setOnClickListener{
             val intent = Intent(this, SignUpActivity::class.java)
-            startActivityForResult(intent, RESULT_CODE)
+            startActivityForResult(intent,
+                RESULT_CODE
+            )
         }
 
         // 로그인
