@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.assignment01">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:usesCleartextTraffic="true"
         android:name=".App"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
@@ -13,13 +16,12 @@
         <activity android:name=".seminar.VPActivity" />
         <activity android:name=".seminar.FragExerActivity" />
         <activity android:name=".main.ui.DetailActivity" />
-        <activity android:name=".main.ui.HomeActivity"
-            android:exported="true" />
+        <activity android:name=".main.ui.HomeActivity" />
         <activity android:name=".login.ui.LoginActivity">
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
         </activity>
         <activity android:name=".login.ui.SignUpActivity" />
     </application>
